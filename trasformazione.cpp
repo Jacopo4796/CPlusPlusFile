@@ -17,19 +17,21 @@ int main()
         {
             fileOutput << "\n";
         }
-        else if(verso < 10)
+        else if (verso < 10)
         {
             fileOutput << verso << "   - " << riga << "\n";
+            verso++;
         }
-        else if(verso < 100)
+        else if (verso < 100)
         {
             fileOutput << verso << "  - " << riga << "\n";
+            verso++;
         }
         else
         {
             fileOutput << verso << " - " << riga << "\n";
-        }
-        verso++;
+            verso++;
+        }   
     }
 
     fileInput.close();
