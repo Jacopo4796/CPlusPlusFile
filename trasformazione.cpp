@@ -9,16 +9,27 @@ int main()
     ofstream fileOutput("output.txt");
 
     string riga;
-
-    int fila = 1;
+    int verso = 1;
 
     while (getline(fileInput, riga))
     {
-        if (riga != "")
+        if (riga == "")
         {
-            fileOutput << fila << " - " << riga << "\n";
-            fila++;
+            fileOutput << "\n";
         }
+        else if(verso < 10)
+        {
+            fileOutput << verso << "   - " << riga << "\n";
+        }
+        else if(verso < 100)
+        {
+            fileOutput << verso << "  - " << riga << "\n";
+        }
+        else
+        {
+            fileOutput << verso << " - " << riga << "\n";
+        }
+        verso++;
     }
 
     fileInput.close();
